@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+</head>
+<body >
+    <header class = "game_header">Here will be text</header>
+    <div class="main_div"> <!-- everythins iside this div START of it -->
+        
+        
+        <section> <!-- main frame divider -->
+            <nav>
+                <ul>
+                    <li>
+                        <button class="nav_button">
+                            <p class="nav_button_text">Play</p>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="nav_button">
+                    <p class="nav_button_text">Bebra</p>
+                </button>
+            </li>
+            <li>
+                <button class="nav_button" onclick="page_reload()">
+                    <p class="nav_button_text">Restart</p>
+                </button>
+            </li>
+        </ul>
+    </nav>
+    
+    <div class="middle_content">
+        <p class="result_name_box">
+            <span>К</span>
+            <span>Б</span>
+            
+        </p>
+        <section class="div_game_holder" style="margin-top: 100px;">
+            <div class="div_enter_zone">
+                <div id="container">
+                    
+                </div>
+                <input type="text" class="my_input" id="input_1" maxlength="1">
+                <input type="text" class="my_input" id="input_2" maxlength="1">
+                <input type="text" class="my_input" id="input_3" maxlength="1">
+                <input type="text" class="my_input" id="input_4" maxlength="1"><br>
+                <button type="button" id="confirmation-button" onclick="do_everything()" disabled>Enter right numbers!</button>
+            </div>
+            <div class="div_result_zone" id="result_container">
+                
+            </div>
+            
+            
+        </section>
+    </div>
+    
+    <div class="right_content">
+        
+        <div class="stopWatch_moves_container">
+            <p class="stopWatch_holder" id="shower">00:00<p>
+            <p class="moves_counter" id="id_moves_counter">0 moves</p>
+        </div>
+
+    </div>
+    
+    
+</section> <!-- end of main frame divider -->
+
+
+
+
+
+
+
+</div> <!-- END if div for background pictures filling -->
+<script src='main.js'></script>
+</body>
+</html>
