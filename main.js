@@ -220,14 +220,15 @@ function do_everything() {
     // console.log("HELLO from do everything func")
     let user_guess_var = user_input_getter();
     let result = check_function(user_guess_var, my_random_number);
-    if(result == "04"){ // HERE WE DETECT WIN
-        console.log("you won");
-        stopWatch_ender(timer);
-
-    }
     numbers_text_creation(user_guess_var);
     user_result_text_creation(result);
     moves_displayer();
+    if(result == "04"){ // HERE WE DETECT WIN
+        console.log("you won");
+        stopWatch_ender(timer);
+        win_message();
+
+    }
     input_cleaner();
     input_validator();
 }
@@ -340,6 +341,42 @@ body.addEventListener('keydown', function(event) {
     }
 });
 
+function win_message(){
+    const body = document.getElementById("body");
+    let background_black = document.createElement('div');
+    let mess_holder = document.createElement('div');
+    let text1 = document.createElement('p');
+    let text2 = document.createElement('p');
+    let text3 = document.createElement('p');
+    let text4 = document.createElement('p');
+
+
+    mess_holder.className = "win_mess_div";
+    text1.className = "win_text1";
+    text2.className = "win_text2";
+    text3.className = "win_text3";
+    text4.className = "win_text4";
+    background_black.className = "win_background";
+
+    text1.innerHTML = "Congratulations!";
+    
+    text2.innerHTML = "You won!";
+
+    text3.innerHTML = "It took you:";
+
+    text4.innerHTML = minutes.toString() + ":" + seconds.toString() + " and " + moves_counter +" moves";
+
+
+    
+    mess_holder.appendChild(text1);
+    mess_holder.appendChild(text2);
+    mess_holder.appendChild(text3);
+    mess_holder.appendChild(text4);
+    body.appendChild(mess_holder);
+
+    body.appendChild(background_black);
+
+}
 
 
 function page_reload() {
