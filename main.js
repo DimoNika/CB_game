@@ -147,8 +147,6 @@ function check_function(guess, rand_number){
     result = cows_t + bulls_t;
 
     return result;
-        
-    
 }
 
 function user_input_getter(){
@@ -205,16 +203,28 @@ function go_time() {
 }
 
 function stopWatch_starter() {
-    if (moves_counter == 0) {
-        setInterval(go_time, 1000);
-    }
+    
+    let my_timer = setInterval(go_time, 1000);
+    
+    return my_timer
+}
+
+function stopWatch_ender(timer) {
+    clearInterval(timer);
 }
 
 function do_everything() {
-    stopWatch_starter();
+    if (moves_counter == 0) {
+        timer = stopWatch_starter();
+    }
     // console.log("HELLO from do everything func")
     let user_guess_var = user_input_getter();
     let result = check_function(user_guess_var, my_random_number);
+    if(result == "04"){ // HERE WE DETECT WIN
+        console.log("you won");
+        stopWatch_ender(timer);
+
+    }
     numbers_text_creation(user_guess_var);
     user_result_text_creation(result);
     moves_displayer();
@@ -249,7 +259,7 @@ function numbers_text_creation(guess) {
     numbers_container.appendChild(my_div)
 }
 
-function user_result_text_creation(result){
+function user_result_text_creation(result) {
     let n1 = document.createElement("span");
     n1.className = "users_result_number";
     n1.innerHTML = result[0];
