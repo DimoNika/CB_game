@@ -364,7 +364,16 @@ function win_message(){
 
     text3.innerHTML = "It took you:";
 
-    text4.innerHTML = minutes.toString() + ":" + seconds.toString() + " and " + moves_counter +" moves";
+    let temp_min = minutes.toString();
+    let temp_sec = seconds.toString();
+    if (temp_min < 10) {
+        temp_min = "0" + temp_min;
+    }
+
+    if (temp_sec < 10) {
+        temp_sec = "0" + temp_sec;
+    }
+    text4.innerHTML = temp_min + ":" + temp_sec + " and " + moves_counter +" moves";
 
 
     
