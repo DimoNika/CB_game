@@ -349,14 +349,39 @@ function win_message(){
     let text2 = document.createElement('p');
     let text3 = document.createElement('p');
     let text4 = document.createElement('p');
+    let btns_holder = document.createElement('div');
+    let button1_holder = document.createElement('div');
+    let button2_holder = document.createElement('div');
+    let hide_btn = document.createElement('button');
+    let reset_btn = document.createElement('button');
 
 
     mess_holder.className = "win_mess_div";
+    mess_holder.id = "win_mess_div_id";
+
     text1.className = "win_text1";
     text2.className = "win_text2";
     text3.className = "win_text3";
     text4.className = "win_text4";
+
     background_black.className = "win_background";
+    background_black.id = "win_background_id"
+
+    
+    btns_holder.className = "btns_holder_div";
+    button1_holder.className = "left_btn_holder";
+    button2_holder.className = "right_btn_holder";
+
+    hide_btn.className = "hide_button_cl";
+    reset_btn.className = "reset_button_cl";
+
+    hide_btn.innerHTML = "Hide";
+    reset_btn.innerHTML = "New game";
+
+    reset_btn.onclick = page_reload;
+    hide_btn.onclick = win_message_hide;
+    background_black.onclick = win_message_hide;
+
 
     text1.innerHTML = "Congratulations!";
     
@@ -364,6 +389,7 @@ function win_message(){
 
     text3.innerHTML = "It took you:";
 
+    
     let temp_min = minutes.toString();
     let temp_sec = seconds.toString();
     if (temp_min < 10) {
@@ -375,18 +401,39 @@ function win_message(){
     }
     text4.innerHTML = temp_min + ":" + temp_sec + " and " + moves_counter +" moves";
 
+    button1_holder.appendChild(hide_btn);
+    btns_holder.appendChild(button1_holder)
 
-    
+    button2_holder.appendChild(reset_btn);
+    btns_holder.appendChild(button2_holder);
+
     mess_holder.appendChild(text1);
     mess_holder.appendChild(text2);
     mess_holder.appendChild(text3);
     mess_holder.appendChild(text4);
+    mess_holder.appendChild(btns_holder);
+    
+    
     body.appendChild(mess_holder);
-
+    
     body.appendChild(background_black);
+    
 
 }
 
+function win_message_show() {
+    let background_itself = document.getElementById("win_background_id");
+    let win_mess_holder = document.getElementById("win_mess_div_id");
+    background_itself.style.visibility = "visible";
+    win_mess_holder.style.visibility = "visible";
+}
+
+function win_message_hide() {
+    let background_itself = document.getElementById("win_background_id");
+    let win_mess_holder = document.getElementById("win_mess_div_id");
+    background_itself.style.visibility = "hidden";
+    win_mess_holder.style.visibility = "hidden";
+}
 
 function page_reload() {
     location.reload();
