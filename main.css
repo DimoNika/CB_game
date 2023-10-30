@@ -27,17 +27,25 @@ body{
     background-size: 120px;
     /* height: 2000px;    TEMP for TEST */
     overflow-y: scroll;
+    overflow-x: hidden;
+}   
+
+
+.main_div {
+    display: grid;
+    align-content: center;
+    justify-content: center;
 }
-
-
 
 .main_section {
     display: flex;
     align-self: center;
-    max-width: 2092px;
-    /* min-width: 1700px; */
+    max-width: 1900px;
+    min-width: 1900px;
+
 
 }
+
 
 
 nav {
@@ -93,6 +101,7 @@ nav ul li{
     border-right: 2px solid black;
     flex: 3;
     background: none;
+    align-self: center;
 }
 
 .right_content{
