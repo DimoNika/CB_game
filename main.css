@@ -6,9 +6,9 @@
     padding: 0;
     box-sizing: border-box;
     /* TEMP for DEBUG*/
-    /* border: 1px solid red; */
+    border: 1px solid red;
     
-    }
+}
 
 .game_header{
     overflow: hidden;
@@ -19,7 +19,7 @@
     background-color: darkgray;
     height: 85px;
     font-size: 40px;
-
+    
 }
 
 body{
@@ -29,13 +29,19 @@ body{
     overflow-y: scroll;
 }
 
-section {
+
+
+.main_section {
     display: flex;
+    align-self: center;
+    max-width: 2092px;
+    /* min-width: 1700px; */
+
 }
+
 
 nav {
     flex: 1;
-    
 }
 
 nav ul {
@@ -76,10 +82,13 @@ nav ul li{
 
 .div_game_holder {
     margin: 2rem;
-    
+    margin-top: 120px;
+    display: flex;
 }
 
 .middle_content {
+    min-width: 1142px;
+    max-width: 1142px;
     border-left: 2px solid black;
     border-right: 2px solid black;
     flex: 3;
@@ -117,13 +126,14 @@ span{
     margin: 0;
     padding: 0;
 }
+
 .result_name_box {
     width: fit-content;
     float: right;
     font-size: 5rem;
     margin-top: 1px;
     overflow: hidden;
-    margin-right: 6.5rem;
+    margin-right: 10%;
 }
 
 #confirmation-button {
