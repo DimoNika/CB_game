@@ -1,0 +1,318 @@
+
+
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* TEMP for DEBUG*/
+    /* border: 1px solid red; */
+    
+}
+
+.game_header{
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: darkgray;
+    height: 85px;
+    font-size: 40px;
+    
+}
+
+body{
+    background-image: url('data/backPNG.png');
+    background-size: 120px;
+    /* height: 2000px;    TEMP for TEST */
+    overflow-y: scroll;
+    overflow-x: hidden;
+    width: 1903px;
+}   
+
+
+.main_div {
+    display: grid;
+    align-content: center;
+    justify-content: center;
+}
+
+.main_section {
+    display: flex;
+    align-self: center;
+    max-width: 1900px;
+    min-width: 1900px;
+
+
+}
+
+
+
+nav {
+    flex: 1;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 100px;
+    margin-left: 40px;
+}
+
+nav ul li{
+    margin: 20px;
+    color: red;
+
+}
+
+.nav_button {
+    color: green;
+    font-size: 55px;
+    background: none;
+    text-align: left;
+    width: 100%;
+    border: none;
+}
+
+.nav_button_text{
+    margin: 3px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-style: italic;
+}
+
+.nav_button:hover .nav_button_text{
+    font-size: 60px;
+    margin: 0;
+    color: red;
+    text-decoration: underline;
+}
+
+
+.div_game_holder {
+    margin: 2rem;
+    margin-top: 120px;
+    display: flex;
+}
+
+.middle_content {
+    min-width: 1142px;
+    max-width: 1142px;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+    flex: 3;
+    background: none;
+    align-self: center;
+}
+
+.right_content{
+    flex: 1;
+}
+
+.div_result_zone {
+    flex: 1;
+    text-align: center;
+}
+
+input {
+    height: 7rem;
+    width: 7rem;
+    font-size: 5rem;
+    text-align: center;
+    margin: 2rem;
+    
+}
+
+.div_enter_zone {
+    flex: 3;
+    text-align: center;
+    min-width: 720px;
+    /* display: block; */
+    /* flex: none; */
+}
+
+
+span{
+    margin: 0;
+    padding: 0;
+}
+
+.result_name_box {
+    width: fit-content;
+    float: right;
+    font-size: 5rem;
+    margin-top: 1px;
+    overflow: hidden;
+    margin-right: 10%;
+}
+
+#confirmation-button {
+    margin-top: 1rem;
+    height: 3rem;
+    width: 30rem;
+    background-color: green;
+    border-radius: 1rem;
+    font-size: 2rem;
+    color: aqua;
+}
+
+#confirmation-button:disabled {
+    background-color: rgb(255, 0, 0);
+    color: yellow;
+    font-size: 2rem;
+}
+
+.users_guess_number {
+    font-size: 5rem;
+    color: rgb(252, 240, 3);
+    margin: 0 2rem;
+}
+
+.users_result_number {
+    font-size: 5rem;
+    color: coral;
+    margin: 0 1.5rem;
+}
+
+
+.stopWatch_moves_container {
+    align-self: center;
+    position: fixed;
+    margin:0 60px;
+    margin-top: 6rem;
+}
+
+.stopWatch_holder{
+    font-size: 7rem;
+    color: blueviolet;
+    text-align: center;
+    
+}
+
+
+.moves_counter {
+    color: aqua;
+    text-align: center;
+    font-size: 4rem;
+}
+
+.win_mess_div {
+    border-radius: 10px;
+    width: 800px;
+    height: 600px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: yellow;
+    z-index: 2;
+}
+
+.win_text1 {
+    color: rgb(30, 182, 0);
+    font-family: serif;
+    text-align: center;
+    font-size: 5rem;
+    margin-top: 1.6rem;
+    margin-bottom: 0;
+    font-weight: bold;
+}
+
+.win_text2 {
+    color: rgb(197, 80, 255);
+    font-family: serif;
+    text-align: center;
+    font-size: 4.5rem;
+    margin-top: 1rem;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+
+.win_text3 {
+    color: rgb(255, 146, 43);
+    font-family: serif;
+    text-align: center;
+    font-size: 4rem;
+    margin-top: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+.win_text4 {
+    color: rgb(17, 0, 255);
+    font-family: serif;
+    text-align: center;
+    font-size: 4rem;
+    margin-top: 1.5rem;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.win_background {
+    background-color: rgba(0, 0, 0, 0.35);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+
+.btns_holder_div {
+    margin: 2rem 3rem 0;
+    display: flex;
+    height: 7.5rem;
+    /* background-color: aqua; */
+}
+
+
+
+.left_btn_holder {
+    display: flex;
+    flex: 1;
+    place-items: center;
+    justify-content: flex-start;
+}
+
+.right_btn_holder {
+    display: flex;
+    flex: 1;
+    place-items: center;
+    justify-content: flex-end;
+}
+
+.hide_button_cl {
+    color: rgb(255, 75, 75);
+    font-family: serif;
+    font-size: 4rem;
+    font-weight: bolder;
+    height: fit-content;
+    width: fit-content;
+    background: none;
+    /* border: solid 1px red; */
+    border: none;
+}
+
+.hide_button_cl:hover {
+    color: red;
+    text-decoration: underline;
+}
+
+.reset_button_cl {
+    color: seagreen;
+    font-family: serif;
+    font-size: 4rem;
+    font-weight: bolder;
+    height: fit-content;
+    width: fit-content;
+    background: none;
+    /* border: solid 1px red; */
+    border: none;
+}
+
+.reset_button_cl:hover {
+    color: green;
+    text-decoration: underline;
+}
